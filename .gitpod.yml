@@ -11,13 +11,13 @@ ports:
 image: pookmish/drupal8ci:gitpod
 tasks:
   - init: >
-      cp .gitpod/blt.yml blt/local.blt.yml &&
       composer update --no-interaction &&
+      cp .gitpod/blt.yml blt/local.blt.yml &&
+      find docroot/sites/ -name 'local*' | xargs rm &&
       blt blt:telemetry:disable --no-interaction &&
       blt settings &&
       sed -i 's/\/https:\/\//\/8001-/g' docroot/sites/default/local.drush.yml &&
-      blt drupal:install -n &&
-      blt sbsc
+      drush si stanford_profile -y
     command: |
       apache2ctl restart
       drush uli
