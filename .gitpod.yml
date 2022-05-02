@@ -13,9 +13,6 @@ tasks:
   - init: >
       cp .gitpod/blt.yml blt/local.blt.yml &&
       composer update --no-interaction &&
-      rm -rf docroot/*/custom/* &&
-      composer install --prefer-source --no-interaction &&
-      composer update su-sws/* &&
       blt blt:telemetry:disable --no-interaction &&
       blt settings &&
       sed -i 's/\/https:\/\//\/8001-/g' docroot/sites/default/local.drush.yml &&
