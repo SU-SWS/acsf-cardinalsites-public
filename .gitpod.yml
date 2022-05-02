@@ -13,6 +13,8 @@ tasks:
   - init: >
       composer update --no-interaction &&
       cp .gitpod/blt.yml blt/local.blt.yml &&
+      mkdir -p docroot/sites/settings &&
+      cp .gitpod/global.settings.php docroot/sites/settings/global.settings.php &&
       find docroot/sites/ -name 'local*' | xargs rm &&
       blt blt:telemetry:disable --no-interaction &&
       blt settings &&
