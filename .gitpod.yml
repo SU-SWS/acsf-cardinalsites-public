@@ -62,3 +62,4 @@ tasks:
       drush uli | xargs gp preview --external
       git config core.fileMode false
       blt blt:telemetry:disable --no-interaction
+      git remote set-url origin git@github.com:SU-SWS/acsf-cardinalsites-public.git
