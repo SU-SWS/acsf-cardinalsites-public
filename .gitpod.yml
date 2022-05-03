@@ -6,7 +6,7 @@ ports:
     onOpen: ignore
     visibility: private
   - port: 8001
-    onOpen: ignore
+    onOpen: open-preview
     visibility: public
 image: pookmish/drupal8ci:gitpod
 tasks:
