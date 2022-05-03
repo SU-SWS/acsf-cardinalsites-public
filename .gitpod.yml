@@ -47,6 +47,8 @@ tasks:
       export PREVIEW_FULL_URL=`gp url 8001` &&
       export PREVIEW_URL=${PREVIEW_FULL_URL#"https://"} &&
       composer update --no-interaction &&
+      rm -rf docroot/*/custom/* &&
+      composer install --prefer-source --no-interaction &&
       rm -rf docroot/profiles/custom/stanford_profile &&
       rsync -r ../stanford_profile/ docroot/profiles/custom/stanford_profile &&
       cp .gitpod/blt.yml blt/local.blt.yml &&
