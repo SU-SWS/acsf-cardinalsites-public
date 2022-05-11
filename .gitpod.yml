@@ -1,8 +1,19 @@
-
 github:
   prebuilds:
     master: true
     branches: true
+    pullRequests: true
+    pullRequestsFromForks: false
+    addCheck: false
+    addComment: false
+    addBadge: false
+additionalRepositories:
+  - url: https://github.com/SU-SWS/stanford_profile
+    checkoutLocation: stanford_profile
+github:
+  prebuilds:
+    master: true
+    branches: false
     pullRequests: true
     pullRequestsFromForks: false
     addCheck: false
@@ -33,14 +44,19 @@ tasks:
       echo $GITCONFIG | base64 -d > ~/.gitconfig &&
       chmod 644 ~/.gitconfig
     init: >
+      export PREVIEW_FULL_URL=`gp url 8001` &&
+      export PREVIEW_URL=${PREVIEW_FULL_URL#"https://"} &&
       composer update --no-interaction &&
+      rm -rf docroot/*/custom/* &&
+      composer install --prefer-source --no-interaction &&
+      rm -rf docroot/profiles/custom/stanford_profile &&
+      rsync -r ../stanford_profile/ docroot/profiles/custom/stanford_profile &&
       cp .gitpod/blt.yml blt/local.blt.yml &&
       mkdir -p docroot/sites/settings &&
       cp .gitpod/global.settings.php docroot/sites/settings/global.settings.php &&
       find docroot/sites/ -name 'local*' | xargs rm &&
       blt blt:telemetry:disable --no-interaction &&
       blt settings &&
-      sed -i 's/\/https:\/\//\/8001-/g' docroot/sites/default/local.drush.yml &&
       drush si stanford_profile -y
     command: |
       apache2ctl restart
@@ -48,3 +64,4 @@ tasks:
       drush uli | xargs gp preview --external
       git config core.fileMode false
       blt blt:telemetry:disable --no-interaction
+      git remote set-url origin git@github.com:SU-SWS/acsf-cardinalsites-public.git

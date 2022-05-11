@@ -22,4 +22,4 @@ drupal:
 project:
   local:
     protocol: https
-    hostname: '${env.GITPOD_WORKSPACE_URL}'
+    hostname: '${env.PREVIEW_URL}'
