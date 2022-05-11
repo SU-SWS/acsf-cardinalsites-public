@@ -111,13 +111,13 @@
         "drupal/menu_block": "dev-1.x#17bc5a2094dec85a921fdac6aff0030bfe004744",
         "drupal/mysql56": "^1.1",
         "drush/drush": "^10.3",
-        "su-sws/stanford_profile": "8.x-dev"
+        "su-sws/stanford_profile": "dev-9.x || 9.x-dev"
     },
     "require-dev": {
         "acquia/blt-drupal-test": "^1.0",
         "phpspec/prophecy-phpunit": "^2.0",
         "su-sws/blt-sws": "dev-main",
-        "su-sws/drupal-dev": "9.x-dev"
+        "su-sws/drupal-dev": "8.x-2.x-dev"
     },
     "replace": {
         "drupal/coder": "*"
