@@ -49,6 +49,7 @@ tasks:
       blt blt:telemetry:disable --no-interaction &&
       blt settings &&
       drush si stanford_profile -y
+      drush cim -y
     command: |
       apache2ctl restart
       drush uli

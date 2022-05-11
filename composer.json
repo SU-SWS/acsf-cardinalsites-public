@@ -117,7 +117,7 @@
         "acquia/blt-drupal-test": "^1.0",
         "phpspec/prophecy-phpunit": "^2.0",
         "su-sws/blt-sws": "dev-main",
-        "su-sws/drupal-dev": "^8.2"
+        "su-sws/drupal-dev": "9.x-dev"
     },
     "replace": {
         "drupal/coder": "*"
