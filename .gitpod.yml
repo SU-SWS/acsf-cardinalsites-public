@@ -1,3 +1,13 @@
+
+github:
+  prebuilds:
+    master: true
+    branches: true
+    pullRequests: true
+    pullRequestsFromForks: false
+    addCheck: false
+    addComment: false
+    addBadge: false
 ports:
   - port: 3306
     onOpen: ignore
