@@ -10,15 +10,6 @@ github:
 additionalRepositories:
   - url: https://github.com/SU-SWS/stanford_profile
     checkoutLocation: stanford_profile
-github:
-  prebuilds:
-    master: true
-    branches: false
-    pullRequests: true
-    pullRequestsFromForks: false
-    addCheck: false
-    addComment: false
-    addBadge: false
 ports:
   - port: 3306
     onOpen: ignore
