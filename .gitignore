@@ -6,6 +6,8 @@ docroot
 composer.lock
 .git
 .env
+blt
+salt.txt
 
 # Ignore configuration files that may contain sensitive information.
 local.settings.php
@@ -174,3 +176,5 @@ drush/sites/.checksums
 
 # Drupal Console Translations
 console
+/travis_wait*
+.phpcs-cache
