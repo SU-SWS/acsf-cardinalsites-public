@@ -50,7 +50,8 @@ tasks:
       find docroot/sites/ -name 'local*' | xargs rm &&
       blt blt:telemetry:disable --no-interaction &&
       blt settings &&
-      drush si stanford_profile -y
+      drush si stanford_profile -v -y
+      drush cr
       drush cim -y
     command: |
       apache2ctl restart
