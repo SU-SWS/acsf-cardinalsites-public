@@ -1,0 +1,13 @@
+diff --git a/taxonomy_entity_index.module b/taxonomy_entity_index.module
+index 60a2cc2..7ae4d6f 100644
+--- a/taxonomy_entity_index.module
++++ b/taxonomy_entity_index.module
+@@ -68,7 +68,7 @@ function taxonomy_entity_index_entity_update(EntityInterface $entity) {
+   $entity_type_id = $entity->getEntityTypeId();
+   $config = \Drupal::config('taxonomy_entity_index.settings');
+ 
+-  $entity_types_to_index = $config->get('types');
++  $entity_types_to_index = $config->get('types') ?: [];
+ 
+   if (!in_array($entity_type_id, $entity_types_to_index)) {
+     return;
