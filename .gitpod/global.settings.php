@@ -1,6 +1,6 @@
 <?php
 
-error_reporting(E_ALL & ~E_DEPRECATED & ~E_STRICT);
+error_reporting(E_ALL & ~E_DEPRECATED);
 // Print errors on WSOD.
 ini_set('display_errors', TRUE);
 ini_set('display_startup_errors', TRUE);
@@ -17,3 +17,5 @@ $settings['config_sync_directory'] = $repo_root . "/docroot/profiles/custom/stan
 
 // Saml login doesn't work on gitpod. So disable it.
 $config['simplesamlphp_auth.settings']['activate'] = FALSE;
+
+$settings['container_yamls'][] = __DIR__ . '/../local.services.yml';
