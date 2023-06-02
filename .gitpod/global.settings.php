@@ -4,7 +4,10 @@ error_reporting(E_ALL & ~E_DEPRECATED);
 // Print errors on WSOD.
 ini_set('display_errors', TRUE);
 ini_set('display_startup_errors', TRUE);
-ini_set('memory_limit', '256M');
+
+if (PHP_SAPI !== 'cli') {
+  ini_set('memory_limit', '256M');
+}
 
 if (!getenv('STANFORD_ENCRYPT')) {
   putenv("STANFORD_ENCRYPT=" . substr(file_get_contents("$repo_root/salt.txt"), 0, 32));
