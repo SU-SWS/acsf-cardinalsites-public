@@ -46,9 +46,9 @@ tasks:
       rsync -r ../stanford_profile/ docroot/profiles/custom/stanford_profile &&
       cp .gitpod/blt.yml blt/local.blt.yml &&
       mkdir -p docroot/sites/settings &&
+      find docroot/sites/ -name 'local*' | xargs rm &&
       cp .gitpod/global.settings.php docroot/sites/settings/global.settings.php &&
       cp .gitpod/default.local.services.yml docroot/sites/local.services.yml &&
-      find docroot/sites/ -name 'local*' | xargs rm &&
       blt blt:telemetry:disable --no-interaction &&
       blt settings &&
       drush si stanford_profile -v -y
