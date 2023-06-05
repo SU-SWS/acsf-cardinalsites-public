@@ -51,7 +51,8 @@
         "drupal/mysql56": "^1.1",
         "drush/drush": "^11",
         "simplesamlphp/simplesamlphp": "^1.19",
-        "su-sws/stanford_profile": "10.x-dev"
+        "su-sws/stanford_profile": "10.x-dev",
+        "su-sws/stanford_profile_helper": "9.x-dev as 9.2.6"
     },
     "require-dev": {
         "acquia/blt-drupal-test": "^1.0",
