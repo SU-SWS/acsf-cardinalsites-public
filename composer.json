@@ -58,7 +58,12 @@
         "drupal/upgrade_status": "^4.0",
         "phpspec/prophecy-phpunit": "^2.0",
         "su-sws/blt-sws": "dev-main",
-        "su-sws/drupal-dev": "^8.2"
+        "su-sws/drupal-dev": "^8.2",
+        "drupal/anchor_link": "^2.5",
+        "drupal/ckeditor_a11ychecker": "^1.0",
+        "drupal/ckeditor_balloonpanel": "^1.1",
+        "drupal/ckeditor_blockimagepaste": "^1.4",
+        "drupal/fakeobjects": "^1.1"
     },
     "replace": {
         "drupal/coder": "*"
