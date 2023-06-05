@@ -44,6 +44,9 @@ tasks:
       composer install --prefer-source --no-interaction &&
       rm -rf docroot/profiles/custom/stanford_profile &&
       rsync -r ../stanford_profile/ docroot/profiles/custom/stanford_profile &&
+      cd docroot/profiles/custom/stanford_profile &&
+      git remote set-url origin git@github.com:SU-SWS/stanford_profile.git &&
+      cd $GITPOD_REPO_ROOT &&
       cp .gitpod/blt.yml blt/local.blt.yml &&
       mkdir -p docroot/sites/settings &&
       find docroot/sites/ -name 'local*' | xargs rm &&
