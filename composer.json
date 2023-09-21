@@ -10,7 +10,8 @@
     "repositories": [
         {
             "type": "composer",
-            "url": "https://packages.drupal.org/8"
+            "url": "https://packages.drupal.org/8",
+            "exclude": ["drupal/display_field_copy"]
         },
         {
             "type": "package",
@@ -35,36 +36,33 @@
                     "reference": "master"
                 }
             }
+        },
+        {
+            "type": "vcs",
+            "url": "https://git.drupalcode.org/issue/display_field_copy-3287010.git"
         }
     ],
     "require": {
         "php": ">=8.0",
         "acquia/blt": "^13.7",
         "acquia/blt-acsf": "^1.0",
-        "acquia/blt-simplesamlphp": "^1.0",
         "composer/installers": "^1.9",
         "cweagans/composer-patches": "^1.6",
         "drupal/acquia_purge": "^1.1",
         "drupal/acsf": "^2.68",
-        "drupal/core-composer-scaffold": "^9",
-        "drupal/core-recommended": "^9.0",
+        "drupal/core-composer-scaffold": "^10",
+        "drupal/core-recommended": "^10",
+        "drupal/display_field_copy": "dev-3287010-automated-drupal-10 as 2.0.0",
         "drupal/mysql56": "^1.1",
         "drush/drush": "^11",
-        "simplesamlphp/simplesamlphp": "^1.19",
-        "su-sws/stanford_profile": "10.x-dev",
+        "su-sws/stanford_profile": "11.x-dev",
         "su-sws/stanford_profile_helper": "9.x-dev as 9.2.6"
     },
     "require-dev": {
         "acquia/blt-drupal-test": "^1.0",
-        "drupal/upgrade_status": "^4.0",
         "phpspec/prophecy-phpunit": "^2.0",
         "su-sws/blt-sws": "dev-main",
-        "su-sws/drupal-dev": "^8.2",
-        "drupal/anchor_link": "^2.5",
-        "drupal/ckeditor_a11ychecker": "^1.0",
-        "drupal/ckeditor_balloonpanel": "^1.1",
-        "drupal/ckeditor_blockimagepaste": "^1.4",
-        "drupal/fakeobjects": "^1.1"
+        "su-sws/drupal-dev": "^10"
     },
     "replace": {
         "drupal/coder": "*"
