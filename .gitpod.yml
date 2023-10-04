@@ -38,13 +38,12 @@ tasks:
       export PREVIEW_FULL_URL=`gp url 8001` &&
       export PREVIEW_URL=${PREVIEW_FULL_URL#"https://"} &&
       export PROFILE_BRANCH=`cd ../stanford_profile && git rev-parse --abbrev-ref HEAD` &&
+      export PROFILE_BRANCH='11.x' &&
       composer require su-sws/stanford_profile:"dev-$PROFILE_BRANCH || $PROFILE_BRANCH-dev" --no-update &&
       composer update --no-interaction &&
       rm -rf docroot/*/custom/* &&
       composer install --prefer-source --no-interaction &&
-      rm -rf docroot/profiles/custom/stanford_profile &&
-      rsync -r ../stanford_profile/ docroot/profiles/custom/stanford_profile &&
-      cd docroot/profiles/custom/stanford_profile &&
+      cd $GITPOD_REPO_ROOT/docroot/profiles/custom/stanford_profile &&
       git remote set-url origin git@github.com:SU-SWS/stanford_profile.git &&
       cd $GITPOD_REPO_ROOT &&
       cp .gitpod/blt.yml blt/local.blt.yml &&
