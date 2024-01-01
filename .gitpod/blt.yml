@@ -20,6 +20,8 @@ drupal:
     password: ''
     database: 'drupal'
 project:
+  profile:
+    name: stanford_profile
   local:
     protocol: https
     hostname: '${env.PREVIEW_URL}'
