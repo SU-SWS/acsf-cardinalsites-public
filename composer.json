@@ -130,15 +130,6 @@
         },
         "enable-patching": true,
         "patches": {
-            "drupal/core": {
-                "https://www.drupal.org/project/drupal/issues/3151977": "patches/media-recursion-limit.patch"
-            },
-            "drupal/paranoia": {
-                "https://stanfordits.atlassian.net/browse/D8CORE-1351": "patches/contrib/paranoia.patch"
-            },
-            "drupal/ui_patterns": {
-                "Ui Patterns Views Fixes": "patches/contrib/ui_patterns_views-preview.patch"
-            },
             "drupal/taxonomy_entity_index": {
                 "Fix PHP 8 strict error with arrays": "patches/contrib/taxonomy_entity_index.patch"
             }
