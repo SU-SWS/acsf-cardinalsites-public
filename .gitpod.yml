@@ -1,12 +1,3 @@
-github:
-  prebuilds:
-    master: true
-    branches: true
-    pullRequests: true
-    pullRequestsFromForks: false
-    addCheck: false
-    addComment: false
-    addBadge: false
 additionalRepositories:
   - url: https://github.com/SU-SWS/stanford_profile
     checkoutLocation: stanford_profile
@@ -22,18 +13,17 @@ ports:
     visibility: public
 image: pookmish/drupal8ci:gitpod
 tasks:
-  - before: >
-      eval $(command gp env -e) &&
-      mkdir -p ~/.ssh &&
-      [[ ! -z $SSH_PUBLIC_KEY  ]] &&
-      echo $SSH_PUBLIC_KEY | base64 -d > ~/.ssh/id_rsa.pub &&
-      chmod 644 ~/.ssh/id_rsa.pub &&
-      [[ ! -z $SSH_PRIVATE_KEY  ]] &&
-      echo $SSH_PRIVATE_KEY | base64 -d > ~/.ssh/id_rsa &&
-      chmod 600 ~/.ssh/id_rsa &&
-      [[ ! -z $GITCONFIG  ]] &&
-      echo $GITCONFIG | base64 -d > ~/.gitconfig &&
-      chmod 644 ~/.gitconfig
+  - before: |
+      mkdir -p ~/.ssh
+      if [[ ! -z $SSH_PUBLIC_KEY  ]]; then
+          echo $SSH_PUBLIC_KEY | base64 -d > ~/.ssh/id_rsa.pub && chmod 644 ~/.ssh/id_rsa.pub
+      fi
+      if [[ ! -z $SSH_PRIVATE_KEY ]]; then
+          echo $SSH_PRIVATE_KEY | base64 -d > ~/.ssh/id_rsa && chmod 600 ~/.ssh/id_rsa
+      fi
+      if [[ ! -z $GITCONFIG ]]; then
+          echo $GITCONFIG | base64 -d > ~/.gitconfig && chmod 644 ~/.gitconfig
+      fi
     init: >
       export PREVIEW_FULL_URL=`gp url 8001` &&
       export PREVIEW_URL=${PREVIEW_FULL_URL#"https://"} &&
