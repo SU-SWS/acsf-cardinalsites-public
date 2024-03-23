@@ -132,6 +132,9 @@
         "patches": {
             "drupal/taxonomy_entity_index": {
                 "Fix PHP 8 strict error with arrays": "patches/contrib/taxonomy_entity_index.patch"
+            },
+            "drupal/ui_patterns": {
+                "Ui Patterns Views Fixes": "patches/contrib/ui_patterns_views-preview.patch"
             }
         }
     },
