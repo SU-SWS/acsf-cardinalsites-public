@@ -62,7 +62,7 @@
         "drupal/acsf": "^2.68",
         "drupal/core-composer-scaffold": "^10",
         "drupal/core-recommended": "^10",
-        "drush/drush": "13.3.3 as 12.5.3"
+        "drush/drush": "13.3.3 as 12.5.3",
         "su-sws/stanford_profile": "11.x-dev",
         "su-sws/stanford_profile_helper": "9.x-dev as 9.2.6"
     },
