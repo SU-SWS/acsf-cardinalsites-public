@@ -35,6 +35,21 @@
                     "reference": "master"
                 }
             }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "noli42/chosen",
+                "version": "3.0.0",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "chosen"
+                },
+                "dist": {
+                    "url": "https://github.com/noli42/chosen/releases/download/3.0.0/chosen-assets-v3.0.0.zip",
+                    "type": "zip"
+                }
+            }
         }
     ],
     "require": {
@@ -47,7 +62,7 @@
         "drupal/acsf": "^2.68",
         "drupal/core-composer-scaffold": "^10",
         "drupal/core-recommended": "^10",
-        "drush/drush": "^12",
+        "drush/drush": "13.3.3 as 12.5.3"
         "su-sws/stanford_profile": "11.x-dev",
         "su-sws/stanford_profile_helper": "9.x-dev as 9.2.6"
     },
