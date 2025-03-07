@@ -25,3 +25,6 @@ project:
   local:
     protocol: https
     hostname: '${env.PREVIEW_URL}'
+cm:
+  strategy: config-split
+  allow-overrides: true
