@@ -8,7 +8,23 @@ drush:
       # Load a drush.yml configuration file from the current working directory.
       - docroot/sites/default/local.drush.yml
       # Allow local global config overrides.
-      - local.drush.yml
-    include:
-      - '${env.home}/.drush'
-      - /usr/share/drush/commands
+      - drush/local.drush.yml
+  include:
+    - '${env.home}/.drush'
+    - /usr/share/drush/commands
+
+command:
+  site:
+    install:
+      profile: stanford_profile
+  sws:
+    options:
+      alias-dir: drush/sites
+      db-port: 3306
+      db-host: localhost
+      db-user: root
+      db-pass: ''
+      db-name: drupal
+    codeception:
+      options:
+        test-dir: docroot/profiles/custom/stanford_profile/tests/codeception
