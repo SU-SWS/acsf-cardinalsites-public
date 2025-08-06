@@ -65,7 +65,7 @@
         "drush/drush": "^13",
         "su-sws/stanford_profile": "12.x-dev",
         "su-sws/sws-drush-commands": "1.x-dev",
-        "su-sws/stanford_profile_helper": "9.x-dev as 9.2.6"
+        "su-sws/stanford_profile_helper": "12.x-dev as 10.0.0"
     },
     "require-dev": {
         "phpspec/prophecy-phpunit": "^2.0",
