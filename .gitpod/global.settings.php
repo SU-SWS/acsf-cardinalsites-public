@@ -17,3 +17,6 @@ $settings['file_temp_path'] = '/tmp';
 $settings['config_sync_directory'] = $repo_root . "/docroot/profiles/custom/stanford_profile/config/sync";
 
 $settings['container_yamls'][] = __DIR__ . '/../local.services.yml';
+
+$config['stanford_samlauth.settings']['hide_local_login'] = FALSE;
+$config['stanford_samlauth.settings']['local_login_fieldset_open'] = TRUE;
