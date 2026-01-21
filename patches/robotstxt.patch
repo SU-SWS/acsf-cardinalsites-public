@@ -1,0 +1,35 @@
+diff --git a/docroot/robots.txt b/docroot/robots.txt
+index a1e1d34..711017a 100644
+--- a/docroot/robots.txt
++++ b/docroot/robots.txt
+@@ -14,6 +14,7 @@
+ # http://www.robotstxt.org/robotstxt.html
+ 
+ User-agent: *
++Crawl-delay: 30
+ # CSS, JS, Images
+ Allow: /core/*.css$
+ Allow: /core/*.css?
+@@ -70,3 +71,22 @@ Disallow: /index.php/user/login
+ Disallow: /index.php/user/logout
+ Disallow: /index.php/media/oembed
+ Disallow: /index.php/*/media/oembed
++# Block Printable Paths
++Disallow: /*/printable/print
++# Block saml paths links
++Disallow: /sso/login
++Disallow: /saml_login
++Disallow: /saml/login
++Disallow: /saml/acs
++# Block Femtosearch
++User-agent: FemtosearchBot
++Crawl-Delay: 120
++Disallow: /
++# Block SemrushBot
++User-agent: SemrushBot
++Crawl-Delay: 120
++Disallow: /
++# Honeypot for misbehaving crawlers.
++Disallow: /honeypot-for-misbehaving-crawlers-do-not-enter/
++Disallow: /honeypot-for-misbehaving-crawlers-do-not-enter
++Disallow: /honeypot-for-misbehaving-crawlers-do-not-enter/index.html

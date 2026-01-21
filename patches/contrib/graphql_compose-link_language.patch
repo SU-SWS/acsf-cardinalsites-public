@@ -1,0 +1,13 @@
+diff --git a/src/Plugin/GraphQLCompose/FieldType/LinkItem.php b/src/Plugin/GraphQLCompose/FieldType/LinkItem.php
+index 857d935..5683751 100644
+--- a/src/Plugin/GraphQLCompose/FieldType/LinkItem.php
++++ b/src/Plugin/GraphQLCompose/FieldType/LinkItem.php
+@@ -41,7 +41,7 @@ class LinkItem extends GraphQLComposeFieldTypeBase implements FieldProducerItemI
+       : $this->getUrlFromOther($item);
+ 
+     // Match the Url language to the field item language.
+-    $url->setOption('language', $this->languageManager->getLanguage($item->getLangcode()));
++    // $url->setOption('language', $this->languageManager->getLanguage($item->getLangcode()));
+ 
+     /** @var \Drupal\Core\GeneratedUrl $generated */
+     $generated = $url->toString(TRUE);

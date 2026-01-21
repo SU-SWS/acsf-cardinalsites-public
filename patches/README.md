@@ -47,9 +47,14 @@ To update the `.htaccess` (or `robots.txt`) patch follow these steps
 [make changes to htaccess file]
 [copy the entire file contents]
 rm patches/htaccess.patch
-composer drupal-scaffold
+cd /tmp
+composer create-project drupal/recommended-project drupal
+cd drupal
+mv web docroot
+git init
 git add docroot/.htaccess
-[paste contents]
+git commit docroot/.htaccess -m 'Initial commit'
+[paste modified .htaccess contents from working repo into core Drupal .htaccess file]
 git diff docroot/.htaccess > patches/htaccess.patch
 git add docroot/.htaccess patches/htaccess.patch
 ```

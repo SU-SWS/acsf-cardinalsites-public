@@ -1,0 +1,13 @@
+diff --git a/src/Drush/Commands/ArtifactDeploymentDrushCommands.php b/src/Drush/Commands/ArtifactDeploymentDrushCommands.php
+index 290e3ed..275c92c 100644
+--- a/src/Drush/Commands/ArtifactDeploymentDrushCommands.php
++++ b/src/Drush/Commands/ArtifactDeploymentDrushCommands.php
+@@ -326,7 +326,7 @@ final class ArtifactDeploymentDrushCommands extends DrushCommands {
+ 
+     $this->localMachineHelper->checkRequiredBinariesExist(['composer']);
+     $outputCallback('out', 'Installing Composer production dependencies');
+-    $process = $this->localMachineHelper->execute(['composer', 'install', '--prefer-dist', '--no-interaction', '--optimize-autoloader'],
++    $process = $this->localMachineHelper->execute(['composer', 'install', '--no-dev', '--no-interaction', '--optimize-autoloader'],
+       $outputCallback,
+       $artifactDir,
+       ($this->output->getVerbosity() > OutputInterface::VERBOSITY_NORMAL));

@@ -1,0 +1,13 @@
+diff --git a/lib/Drupal/Core/Render/Element/Button.php b/lib/Drupal/Core/Render/Element/Button.php
+index 4e0763be..6409cb2a 100644
+--- a/lib/Drupal/Core/Render/Element/Button.php
++++ b/lib/Drupal/Core/Render/Element/Button.php
+@@ -89,7 +89,7 @@ class Button extends FormElementBase {
+    *   The $element with prepared variables ready for input.html.twig.
+    */
+   public static function preRenderButton($element) {
+-    if ($element['#submit_button']) {
++    if (isset($element['#submit_button']) && $element['#submit_button']) {
+       $element['#attributes']['type'] = 'submit';
+     }
+     else {

@@ -50,6 +50,19 @@
                     "type": "zip"
                 }
             }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "cure53/dompurify",
+                "version": "3.3.0",
+                "type": "drupal-library",
+                "source": {
+                    "url": "https://github.com/cure53/DOMPurify.git",
+                    "type": "git",
+                    "reference": "3.3.0"
+                }
+            }
         }
     ],
     "require": {
@@ -60,23 +73,19 @@
         "drupal/acsf": "^2.68",
         "drupal/core-composer-scaffold": "^11",
         "drupal/core-recommended": "^11",
-        "drupal/search_api_solr": "^4.3",
-        "drupal/searchstax": "^1.7",
         "drush/drush": "^13",
         "su-sws/stanford_profile": "12.x-dev",
         "su-sws/sws-drush-commands": "1.x-dev",
         "su-sws/stanford_profile_helper": "10.x-dev as 10.0.0"
     },
     "require-dev": {
-        "phpspec/prophecy-phpunit": "^2.0",
         "su-sws/drupal-dev": "^10"
     },
     "replace": {
         "drupal/coder": "*"
     },
     "conflict": {
-        "drupal/drupal": "*",
-        "seboettg/collection": ">=4.0.0"
+        "drupal/drupal": "*"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
@@ -144,11 +153,30 @@
         },
         "enable-patching": true,
         "patches": {
-            "drupal/taxonomy_entity_index": {
-                "Fix PHP 8 strict error with arrays": "patches/contrib/taxonomy_entity_index.patch"
+            "drupal/core": {
+                "https://www.drupal.org/project/drupal/issues/3151977": "patches/media-recursion-limit.patch",
+                "https://www.drupal.org/project/drupal/issues/3530911": "patches/core-render-button.patch"
+            },
+            "drupal/graphql_compose": {
+                "Remove link language setting on field results": "patches/contrib/graphql_compose-link_language.patch"
+            },
+            "drupal/paranoia": {
+                "https://stanfordits.atlassian.net/browse/D8CORE-1351": "patches/contrib/paranoia.patch"
+            },
+            "su-sws/paranoia": {
+                "https://stanfordits.atlassian.net/browse/D8CORE-1351": "patches/contrib/paranoia.patch"
             },
             "drupal/ui_patterns": {
                 "Ui Patterns Views Fixes": "patches/contrib/ui_patterns_views-preview.patch"
+            },
+            "drupal/taxonomy_entity_index": {
+                "Fix PHP 8 strict error with arrays": "patches/contrib/taxonomy_entity_index.patch"
+            },
+            "drupal/google_tag": {
+                "Comment out GA conflict in Google Tag": "patches/contrib/google_tag-ga_conflict.patch"
+            },
+            "seboettg/citeproc-php": {
+                "D8CORE-6866 Non Numeric pages for citation generator": "patches/contrib/citeproc-pages.patch"
             }
         }
     },

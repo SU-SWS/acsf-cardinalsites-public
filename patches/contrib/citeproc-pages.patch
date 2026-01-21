@@ -1,0 +1,13 @@
+diff --git a/src/Util/PageHelper.php b/src/Util/PageHelper.php
+index f226abc..ea29486 100644
+--- a/src/Util/PageHelper.php
++++ b/src/Util/PageHelper.php
+@@ -77,7 +77,7 @@ class PageHelper
+ 
+     private static function renderChicago($from, $to)
+     {
+-        if ($from > 100 && ($from % 100 > 0) && intval(($from / 100), 10) === intval(($to / 100), 10)) {
++        if (is_numeric($from) && is_numeric($to) && $from > 100 && ($from % 100 > 0) && intval(($from / 100), 10) === intval(($to / 100), 10)) {
+             return "".($to % 100);
+         } elseif ($from >= 10000) {
+             return "".($to % 1000);
